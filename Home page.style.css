@@ -449,47 +449,65 @@
 
 @media (max-width: 768px) {
     .div20 {
-        min-height: auto;
+        grid-column: 1 / -1;
+        min-height: 640px;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
 
     .ps-container {
-        min-height: auto;
+        min-height: 620px;
+        gap: 14px;
     }
 
     .ps-card-container {
-        min-height: auto;
+        min-height: 560px;
+        border-radius: 16px;
     }
 
     .ps-card {
-        position: relative;
-        min-height: 100%;
+        position: absolute;
         flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
     }
 
     .ps-card-content {
         flex-direction: column;
+        min-height: 100%;
     }
 
     .ps-card-image {
-        height: 250px;
+        flex: 0 0 230px;
+        order: 0 !important;
+        min-height: 230px;
         width: 100%;
     }
 
     .ps-card-info {
-        padding: 30px;
+        flex: 1;
+        order: 1 !important;
+        justify-content: flex-start;
+        padding: 22px;
+        overflow-y: auto;
     }
 
     .ps-card-title {
-        font-size: 24px;
+        font-size: 1.35rem;
+        line-height: 1.18;
+        margin-bottom: 12px;
     }
 
     .ps-card-description {
-        font-size: 14px;
+        font-size: 0.92rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
     }
 
     .ps-card-meta {
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
+        margin-bottom: 14px;
     }
 
     .ps-card-links {
@@ -497,7 +515,33 @@
     }
 
     .ps-controls {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .ps-prev-btn,
+    .ps-next-btn {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 430px) {
+    .div20 {
+        min-height: 690px;
+        padding: 0 12px;
+    }
+
+    .ps-container {
+        min-height: 670px;
+    }
+
+    .ps-card-container {
+        min-height: 610px;
+    }
+
+    .ps-card-image {
+        flex-basis: 210px;
+        min-height: 210px;
     }
 }
 
