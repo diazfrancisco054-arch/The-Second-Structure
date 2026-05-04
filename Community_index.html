@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Project Library</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Community_Styles.css">
+</head>
+
+<body>
+  <div class="sticky-header">
+    <div class="div1">
+      <h1>
+        The Second Structure
+        <span class="div1-content"></span>
+      </h1>
+      <button class="nav-collapse-toggle" type="button" aria-label="Toggle navigation" aria-expanded="true">
+        <span class="nav-collapse-icon" aria-hidden="true">&#8964;</span>
+      </button>
+    </div>
+
+    <div class="div2">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Tool_index.html">The Tool</a></li>
+        <li><a href="Codes_index.html">Codes</a></li>
+        <li><a href="Community_index.html">Community</a></li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="div2b"></div>
+
+  <main class="tool-shell">
+    <aside class="tool-rail" aria-label="Community project panels">
+      <section class="tool-menu active" data-panel="my-projects-panel">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Projects</p>
+            <h2 class="tool-menu-title">My Own</h2>
+          </div>
+
+          <div class="tool-menu-copy">
+            <p>Six project cards combining your current case studies with new personal reuse ideas.</p>
+          </div>
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="my-projects-panel" aria-label="Open My Own projects panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+
+      <section class="tool-menu" data-panel="public-works-panel">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Community</p>
+            <h2 class="tool-menu-title">Public Works</h2>
+          </div>
+
+          <div class="tool-menu-copy">
+            <p>Six civic-scale placeholders focused on adaptive reuse, public space, and community-serving upgrades.</p>
+          </div>
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="public-works-panel" aria-label="Open Public Works panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+
+      <section class="tool-menu" data-panel="in-progress-panel">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Community</p>
+            <h2 class="tool-menu-title">In Progress</h2>
+          </div>
+
+          <div class="tool-menu-copy">
+            <p>Work-in-progress neighborhood proposals with review-state tags shown directly under each project title.</p>
+          </div>
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="in-progress-panel" aria-label="Open In Progress panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+    </aside>
+
+    <section class="tool-detail" aria-live="polite">
+      <div class="detail-panel active" id="my-projects-panel">
+        <div class="detail-panel-inner">
+          <div class="community-shell">
+            <div class="community-header">
+              <div>
+                <p class="panel-kicker">Projects</p>
+                <h2>Projects - My Own</h2>
+              </div>
+              <p class="panel-copy">This library keeps your current case-study direction work together with three new residential reuse ideas, all in the same six-card format.</p>
+            </div>
+
+            <div class="community-project-grid" aria-label="My Own project library">
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Mixed Use</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 1_Corridor Live-Work Conversion.png" alt="Corridor live work conversion project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 1 - Corridor Live/Work Conversion</h3>
+                  <div class="community-chip-row">
+                    <span>Main Street</span>
+                    <span>Adaptive Reuse</span>
+                    <span>Upper Housing</span>
+                  </div>
+                  <p>A distressed corridor storefront is reworked into a live/work prototype with active ground-floor frontage and compact residential space above.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Residential</span>
+                </div>
+                <img class="community-card-media" src="Images/Front face render.png" alt="Rowhouse stabilization and interior reset project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 2 - Rowhouse Stabilization + Interior Reset</h3>
+                  <div class="community-chip-row">
+                    <span>Rehab</span>
+                    <span>Phased Work</span>
+                    <span>Envelope Repair</span>
+                  </div>
+                  <p>A vacant rowhouse shell is stabilized, reopened, and reorganized so structural repair and interior renewal can happen in a clear renovation sequence.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Infill</span>
+                </div>
+                <img class="community-card-media" src="Images/reuse plot 1.png" alt="Infill house reclaimed lot project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 3 - Infill House on a Reclaimed Lot</h3>
+                  <div class="community-chip-row">
+                    <span>Lot Recovery</span>
+                    <span>Setbacks</span>
+                    <span>Neighborhood Fit</span>
+                  </div>
+                  <p>A long-vacant parcel becomes a compact infill home shaped by zoning fit, block rhythm, and simple massing decisions that support neighborhood continuity.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Small Unit</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 4 - Garage Turned Studio Apartment.png" alt="Garage turned studio apartment project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 4 - Garage Turned Studio Apartment</h3>
+                  <div class="community-chip-row">
+                    <span>Accessory Unit</span>
+                    <span>Compact Living</span>
+                    <span>Conversion</span>
+                  </div>
+                  <p>A detached garage is converted into a studio apartment with a compact kitchen wall, sleeping alcove, and a small outdoor threshold for daily use.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Addition</span>
+                </div>
+                <img class="community-card-media" src="Images/Fixed house render.png" alt="Home addition for family living placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 5 - Home Addition for Family Living</h3>
+                  <div class="community-chip-row">
+                    <span>Family Living</span>
+                    <span>Extra Bedroom</span>
+                    <span>Backyard Link</span>
+                  </div>
+                  <p>An undersized house receives a targeted addition that opens the ground floor, expands common space, and adds a needed bedroom for multigenerational living.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Interior Retrofit</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 6 - Attic Turned Bedroom Suite.png" alt="Attic turned bedroom suite project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 6 - Attic Turned Bedroom Suite</h3>
+                  <div class="community-chip-row">
+                    <span>Upper Level</span>
+                    <span>Suite Buildout</span>
+                    <span>Storage Reuse</span>
+                  </div>
+                  <p>An unfinished attic becomes a private bedroom suite with daylight improvements, built-in storage, and a more complete second-floor family layout.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-panel" id="public-works-panel">
+        <div class="detail-panel-inner">
+          <div class="community-shell">
+            <div class="community-header">
+              <div>
+                <p class="panel-kicker">Community</p>
+                <h2>Community - Public Works</h2>
+              </div>
+              <p class="panel-copy">These six placeholder civic studies extend the same stacked card system into transit, education, open space, housing, and public-serving infrastructure upgrades.</p>
+            </div>
+
+            <div class="community-project-grid" aria-label="Public Works project library">
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Transit Reuse</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 1 - Train Station to Shops and Housing.png" alt="Train station to shops and housing project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 1 - Train Station to Shops and Housing</h3>
+                  <div class="community-chip-row">
+                    <span>Transit</span>
+                    <span>Retail</span>
+                    <span>Housing</span>
+                  </div>
+                  <p>An underused station structure is rebuilt into a mixed-use destination with commuter-facing retail below and housing layered above the public concourse.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Education</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 2 - School Expansion for More Students.png" alt="School expansion for more students project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 2 - School Expansion for More Students</h3>
+                  <div class="community-chip-row">
+                    <span>Classrooms</span>
+                    <span>Capacity</span>
+                    <span>Campus Growth</span>
+                  </div>
+                  <p>An existing school expands with added classroom wings, clearer student circulation, and a phased construction plan that keeps learning spaces active.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Open Space</span>
+                </div>
+                <img class="community-card-media" src="Images/reuse building 2.png" alt="Old factory turned public park placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 3 - Old Factory Turned Public Park</h3>
+                  <div class="community-chip-row">
+                    <span>Cleanup</span>
+                    <span>Landscape</span>
+                    <span>Industry Memory</span>
+                  </div>
+                  <p>A former industrial parcel is reclaimed as a public park that keeps fragments of the old factory while opening new recreation and gathering space.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Civic Upgrade</span>
+                </div>
+                <img class="community-card-media" src="Images/Project 4 - City Plaza and Community Center Upgrade.png" alt="City plaza and community center upgrade project image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 4 - City Plaza and Community Center Upgrade</h3>
+                  <div class="community-chip-row">
+                    <span>Plaza</span>
+                    <span>Events</span>
+                    <span>Public Interior</span>
+                  </div>
+                  <p>A downtown plaza and its adjoining community center are refreshed together to support events, everyday use, and safer access across the site.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Housing Conversion</span>
+                </div>
+                <img class="community-card-media" src="Images/T2 Large Render.png" alt="Parking garage turned into housing placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 5 - Parking Garage Turned into Housing</h3>
+                  <div class="community-chip-row">
+                    <span>Reuse</span>
+                    <span>Structure</span>
+                    <span>Housing</span>
+                  </div>
+                  <p>An oversized parking structure is studied as a housing retrofit with new facade openings, circulation cores, and shared rooftop community space.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Learning Space</span>
+                </div>
+                <img class="community-card-media" src="Images/Office to compartment Floorplan.png" alt="Library expansion with digital spaces placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 6 - Library Expansion with Digital Spaces</h3>
+                  <div class="community-chip-row">
+                    <span>Library</span>
+                    <span>Digital Labs</span>
+                    <span>Study Rooms</span>
+                  </div>
+                  <p>A neighborhood library grows to include digital production rooms, larger study areas, and flexible public learning spaces for different age groups.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-panel" id="in-progress-panel">
+        <div class="detail-panel-inner">
+          <div class="community-shell">
+            <div class="community-header">
+              <div>
+                <p class="panel-kicker">Community</p>
+                <h2>Community - In Progress</h2>
+              </div>
+              <p class="panel-copy">These six active concepts keep the same project-card format, with gray review-state tags placed directly below the titles to echo your case-study metadata style.</p>
+            </div>
+
+            <div class="community-project-grid" aria-label="In Progress project library">
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Corner Retrofit</span>
+                </div>
+                <img class="community-card-media" src="Images/T2 render 1.png" alt="Mixed use corner retrofit placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 1 - Mixed Use Corner Retrofit</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>Submitted Proposal</span>
+                    <span>Needs Review</span>
+                    <span>Street Activation</span>
+                  </div>
+                  <p>A neighborhood corner building is being reshaped into small-format retail below with compact housing above and a stronger street-facing entry condition.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Micro Housing</span>
+                </div>
+                <img class="community-card-media" src="Images/reuse plot 1.png" alt="Vacant lot micro housing placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 2 - Vacant Lot Micro Housing</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>In Development</span>
+                    <span>Needs Review</span>
+                    <span>Small Footprint</span>
+                  </div>
+                  <p>A micro-housing cluster is being tested on a narrow vacant lot with shared outdoor space and tightly organized utility and access strategies.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Food Access</span>
+                </div>
+                <img class="community-card-media" src="Images/reuse building 1.png" alt="Retail to community kitchen placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 3 - Retail to Community Kitchen</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>Submitted Proposal</span>
+                    <span>In Development</span>
+                    <span>Needs Review</span>
+                  </div>
+                  <p>An empty retail space is being reimagined as a shared community kitchen with teaching space, pantry support, and visible public access from the sidewalk.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Adaptive Reuse</span>
+                </div>
+                <img class="community-card-media" src="Images/T2 render 2.png" alt="Adaptive warehouse studios placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 4 - Adaptive Warehouse Studios</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>In Development</span>
+                    <span>Needs Review</span>
+                    <span>Structure Check</span>
+                  </div>
+                  <p>A warehouse shell is under study as a studio hub with shared production space, maker units, and common circulation woven into the existing frame.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Office Reuse</span>
+                </div>
+                <img class="community-card-media" src="Images/Office to compartment Floorplan.png" alt="Suburban office housing conversion placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 5 - Suburban Office Housing Conversion</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>Submitted Proposal</span>
+                    <span>Needs Review</span>
+                    <span>Housing Fit</span>
+                  </div>
+                  <p>An office building with deep floor plates is being tested for housing conversion through carved light courts, shared amenities, and new unit organization.</p>
+                </div>
+              </article>
+
+              <article class="community-card">
+                <div class="community-card-top">
+                  <div class="community-card-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <span class="community-card-type">Neighborhood Infill</span>
+                </div>
+                <img class="community-card-media" src="Images/Front face render.png" alt="Neighborhood infill housing placeholder image" loading="lazy">
+                <div class="community-card-body">
+                  <h3>Project 6 - Neighborhood Infill Housing</h3>
+                  <div class="community-chip-row community-chip-row-status">
+                    <span>In Development</span>
+                    <span>Needs Review</span>
+                    <span>Block Fit</span>
+                  </div>
+                  <p>A small housing infill study is being shaped around neighborhood scale, shared entries, and a repeating unit strategy that can adapt across similar lots.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="Community_Scripts.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

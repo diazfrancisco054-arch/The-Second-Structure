@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architectural Artboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Tool_Style.css">
+</head>
+
+<body>
+  <!---------------------------Nav bar starts------------------------->
+  <div class="sticky-header">
+    <div class="div1">
+      <h1>
+        The Second Structure
+        <span class="div1-content"></span>
+      </h1>
+      <button class="nav-collapse-toggle" type="button" aria-label="Toggle navigation" aria-expanded="true">
+        <span class="nav-collapse-icon" aria-hidden="true">&#8964;</span>
+      </button>
+    </div>
+
+    <div class="div2">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Tool_index.html">The Tool</a></li>
+        <li><a href="Codes_index.html">Codes</a></li>
+        <li><a href="Community_index.html">Community</a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <!---------------------------Nav bar ends------------------------->
+
+<!---------------------------Upload Rail Portion starts------------------------->
+  <div class="div2b"></div>
+
+  <main class="tool-shell">
+    <aside class="tool-rail" aria-label="Key tools">
+      <section class="tool-menu active" data-panel="imageflow">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Library</p>
+            <h2 class="tool-menu-title">Image Flow</h2>
+          </div>
+
+          <div class="tool-menu-copy">
+            <p>Upload, sort, and review your project images in one organized library.</p>
+          </div>
+
+          <div class="tool-menu-upload">
+            <div class="upload-area upload-area-compact" id="uploadArea">
+              <input type="file" id="fileInput" accept="image/*" multiple>
+              <div class="upload-content upload-content-compact">
+                <p><span>Drag images here,</span><span>Upload a compact set to start sorting</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="imageflow" aria-label="Open Image Flow panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+<!---------------------------Upload Rail Portion ends------------------------->
+
+<!---------------------------Artboard Rail Portion starts------------------------->
+      <section class="tool-menu" data-panel="artboard-panel">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Workspace</p>
+            <h2 class="tool-menu-title">Architectural Artboard</h2>
+          </div>
+
+          <div class="tool-menu-preview tool-menu-preview-artboard">
+            <canvas id="artboardPreview" aria-label="Architectural artboard preview"></canvas>
+          </div>
+
+          
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="artboard-panel" aria-label="Open Architectural Artboard panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+<!---------------------------Artboard Rail Portion ends------------------------->
+
+<!---------------------------Renders Portion starts------------------------->
+      <section class="tool-menu" data-panel="renders-panel">
+        <div class="tool-menu-body">
+          <div class="tool-menu-header">
+            <p class="tool-menu-kicker">Review</p>
+            <h2 class="tool-menu-title">Architectural Renders</h2>
+          </div>
+
+          <div class="tool-menu-preview render-preview-card">
+            <div class="render-slot render-slot-compact render-slot-preview">
+              <span class="render-label">T1 Render 1</span>
+            </div>
+          </div>
+
+          <div class="tool-menu-copy">
+            <p>Review render outputs by reuse direction. Click a direction tab to switch the visible render set.</p>
+          </div>
+        </div>
+
+        <button class="rail-arrow" type="button" data-open-panel="renders-panel" aria-label="Open Architectural Renders panel">
+          <span>&rarr;</span>
+        </button>
+      </section>
+    </aside>
+    <!---------------------------Renders Rail Portion ends------------------------->
+
+<!---------------------------Upload Body Portion starts------------------------->
+    <section class="tool-detail" aria-live="polite">
+      <div class="detail-panel active" id="imageflow">
+        <div class="detail-panel-inner div2c">
+          <div class="app-container">
+            <div class="imageflow-heading">
+              <div>
+                <p class="panel-kicker">Image Library</p>
+                <h2>Image Flow</h2>
+              </div>
+              <p class="panel-copy">Collect project images, sort them by reuse direction, and keep notes for each direction in one workspace.</p>
+            </div>
+
+            <main class="main-content">
+              <div class="toolbar">
+                <div class="search-bar">
+                  <input type="text" id="searchInput" placeholder="Find Images...">
+                </div>
+
+                <div class="filter-options">
+                  <button class="filter-btn active" data-filter="all">All</button>
+                  <button class="filter-btn" data-filter="recent">Recent</button>
+                  <button class="filter-btn" data-filter="favorites">Favorites</button>
+                  <button class="filter-btn" data-filter="template1">Direction 1</button>
+                  <button class="filter-btn" data-filter="template2">Direction 2</button>
+                  <button class="filter-btn" data-filter="template3">Direction 3</button>
+                </div>
+              </div>
+
+              <div class="image-grid" id="imageGrid"></div>
+
+              <section class="suggestions-box" aria-labelledby="suggestionsHeading">
+                <div class="suggestions-tabs">
+                  <div class="suggestions-header">
+                    <p class="suggestions-eyebrow">Planning Notes</p>
+                    <h2 id="suggestionsHeading">Reuse Direction Notes</h2>
+                    <p class="suggestions-copy">Choose a direction to write focused reuse notes for that image set.</p>
+                  </div>
+
+                  <input class="suggestions-tab-input" type="radio" name="suggestion-template" id="suggestion-template-1" checked>
+                  <input class="suggestions-tab-input" type="radio" name="suggestion-template" id="suggestion-template-2">
+                  <input class="suggestions-tab-input" type="radio" name="suggestion-template" id="suggestion-template-3">
+
+                  <div class="suggestions-tab-list" role="tablist" aria-label="Reuse direction notes">
+                    <label class="suggestions-tab-label" for="suggestion-template-1" role="tab">Direction 1</label>
+                    <label class="suggestions-tab-label" for="suggestion-template-2" role="tab">Direction 2</label>
+                    <label class="suggestions-tab-label" for="suggestion-template-3" role="tab">Direction 3</label>
+                  </div>
+
+                  <div class="suggestions-panels">
+                    <section class="suggestions-panel suggestions-panel-template1">
+                      <h3>Direction 1</h3>
+                      <p>Record early themes, needed visuals, and strongest opportunities for this direction.</p>
+                      <div class="suggestions-textarea-shell">
+                        <textarea class="suggestions-textarea" placeholder="Write Direction 1 suggestions here..."></textarea>
+                        <button
+                          class="suggestions-component-btn"
+                          type="button"
+                          data-open-panel="artboard-panel"
+                          data-force-open="true"
+                          data-artboard-overlay="floorplan"
+                          title="Open floor plan on artboard"
+                          aria-label="Open the architectural artboard with the floor plan overlay"
+                        >
+                          <span aria-hidden="true">&uarr;</span>
+                        </button>
+                      </div>
+                    </section>
+
+                    <section class="suggestions-panel suggestions-panel-template2">
+                      <h3>Direction 2</h3>
+                      <p>Track alternative reuse ideas, stakeholder concerns, and possible program shifts.</p>
+                      <div class="suggestions-textarea-shell">
+                        <textarea class="suggestions-textarea" placeholder="Write Direction 2 suggestions here..."></textarea>
+                        <button
+                          class="suggestions-component-btn"
+                          type="button"
+                          data-open-panel="artboard-panel"
+                          data-force-open="true"
+                          data-artboard-overlay="floorplan"
+                          title="Open floor plan on artboard"
+                          aria-label="Open the architectural artboard with the floor plan overlay"
+                        >
+                          <span aria-hidden="true">&uarr;</span>
+                        </button>
+                      </div>
+                    </section>
+
+                    <section class="suggestions-panel suggestions-panel-template3">
+                      <h3>Direction 3</h3>
+                      <p>Capture the boldest concepts, site advantages, and design cues reserved for Direction 3.</p>
+                      <div class="suggestions-textarea-shell">
+                        <textarea class="suggestions-textarea" placeholder="Write Direction 3 suggestions here..."></textarea>
+                        <button
+                          class="suggestions-component-btn"
+                          type="button"
+                          data-open-panel="artboard-panel"
+                          data-force-open="true"
+                          data-artboard-overlay="floorplan"
+                          title="Open floor plan on artboard"
+                          aria-label="Open the architectural artboard with the floor plan overlay"
+                        >
+                          <span aria-hidden="true">&uarr;</span>
+                        </button>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+<!---------------------------Upload Body Portion end------------------------->
+
+<!---------------------------Artboard Body Portion starts------------------------->
+      <div class="detail-panel" id="artboard-panel">
+        <div class="detail-panel-inner div3">
+          <div class="artboard-layout">
+            <div class="artboard-control-tray">
+              <div class="artboard-intro">
+                <h3>Architectural Artboard</h3>
+                <p>Click-drag to place objects. Snaps to grid.</p>
+                <p><span class="kbd">Esc</span> cancel current draw - <span class="kbd">Del</span> delete selected - <span class="kbd">Ctrl/Cmd</span> + click to multi-select</p>
+              </div>
+
+              <div class="artboard-components">
+                <button class="btn btn-outline-primary tool-btn active" data-tool="wall" type="button">Draw Walls</button>
+                <button class="btn btn-outline-primary tool-btn" data-tool="window" type="button">Insert Window</button>
+                <button class="btn btn-outline-primary tool-btn" data-tool="door" type="button">Place Door</button>
+                <button class="btn btn-outline-primary tool-btn" data-tool="stairs" type="button">Add Stairs</button>
+              </div>
+
+              <div class="artboard-actions">
+                <button id="undoBtn" class="btn btn-outline-secondary" type="button">Undo</button>
+                <button id="clearBtn" class="btn btn-outline-danger" type="button">Clear</button>
+                <button id="exportBtn" class="btn btn-success" type="button">Export JSON</button>
+                <button id="exportPdfBtn" class="btn btn-dark" type="button">Export PDF</button>
+              </div>
+
+              <div class="artboard-settings">
+                <label class="artboard-setting" for="strokeSize">
+                  <span>Stroke</span>
+                  <input id="strokeSize" type="number" class="form-control form-control-sm" min="1" max="20" value="6">
+                </label>
+                <label class="artboard-toggle" for="snapToggle">
+                  <input class="form-check-input" type="checkbox" id="snapToggle" checked>
+                  <span>Snap to grid</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="canvas-wrap artboard-canvas-panel">
+              <canvas id="artboard"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+<!---------------------------Artboard Body Portion ends------------------------->
+
+<!---------------------------Renders Body Portion starts------------------------->
+      <div class="detail-panel" id="renders-panel">
+        <div class="detail-panel-inner div4">
+          <div class="render-tabs">
+            <input class="render-tab-input" type="radio" name="render-template" id="render-template-1" checked>
+            <input class="render-tab-input" type="radio" name="render-template" id="render-template-2">
+            <input class="render-tab-input" type="radio" name="render-template" id="render-template-3">
+
+            <div class="render-panel-shell">
+              <div class="render-sidebar">
+                <div class="render-sidebar-copy">
+                  <p class="panel-kicker">Render Sets</p>
+                  <h3>Architectural Renders</h3>
+                  <p>Review render outputs by reuse direction. Click a direction tab to switch the visible render set.</p>
+                  <div class="render-tab-controls">
+                    <label class="btn btn-outline-primary render-tab-btn" for="render-template-1">Direction 1 Components</label>
+                    <label class="btn btn-outline-primary render-tab-btn" for="render-template-2">Direction 2 Components</label>
+                    <label class="btn btn-outline-primary render-tab-btn" for="render-template-3">Direction 3 Components</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="render-board">
+                <div class="render-panel render-panel-template1">
+                  <div class="render-grid">
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/T1 render 1.png" alt="Direction 1 render 1" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T1 Render 1</span>
+                    </div>
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/T1 render 2.png" alt="Direction 1 render 2" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T1 Render 2</span>
+                    </div>
+                    <div class="render-slot render-slot-large">
+                      <img src="Images/T1 Large Render.png" alt="Direction 1 large render" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T1 Large Render</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="render-panel render-panel-template2">
+                  <div class="render-grid">
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/T2 render 1.png" alt="Direction 2 render 1" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T2 Render 1</span>
+                    </div>
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/T2 render 2.png" alt="Direction 2 render 2" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T2 Render 2</span>
+                    </div>
+                    <div class="render-slot render-slot-large">
+                      <img src="Images/T2 Large Render.png" alt="Direction 2 large render" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T2 Large Render</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="render-panel render-panel-template3">
+                  <div class="render-grid">
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/1.jpg" alt="Direction 3 render 1" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T3 Render 1</span>
+                    </div>
+                    <div class="render-slot render-slot-compact">
+                      <img src="Images/2.png" alt="Direction 3 render 2" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T3 Render 2</span>
+                    </div>
+                    <div class="render-slot render-slot-large">
+                      <img src="Images/3.png" alt="Direction 3 large render" style="display:block;width:100%;height:100%;object-fit:cover;">
+                      <span class="render-label">T3 Large Render</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Vista previa">
+        <div class="image-info">
+          <h3 id="imageName"></h3>
+          <p id="imageSize"></p>
+          <p class="image-storage-note">Saved on this browser with IndexedDB/localStorage. Uploads stay on this computer unless you download or export them.</p>
+          <div class="image-actions">
+            <button class="action-btn favorite-btn replica-btn" id="template1Btn" data-template="template1" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span>Direction 1</span>
+            </button>
+
+            <button class="action-btn favorite-btn replica-btn" id="template2Btn" data-template="template2" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span>Direction 2</span>
+            </button>
+
+            <button class="action-btn favorite-btn replica-btn" id="template3Btn" data-template="template3" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span>Direction 3</span>
+            </button>
+
+            <button class="action-btn favorite-btn" id="favoriteBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              Favorite
+            </button>
+
+            <button class="action-btn download-btn" id="downloadBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download
+            </button>
+
+            <button class="action-btn delete-btn" id="deleteBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!---------------------------Renders Body Portion Ends------------------------->
+
+  <script src="Tool_Script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

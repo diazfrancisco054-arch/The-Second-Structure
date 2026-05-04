@@ -1,0 +1,685 @@
+/*
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(23, 1fr);
+    gap: 10px;
+}
+/*this is the parent container which is the grid that contains all the divs*/
+   /* 
+.div1 {
+    grid-column: span 7 / span 7;
+    padding-left: 90px;
+    background-color: rgb(79, 70, 70);
+    color: white;
+    white-space: nowrap;
+
+}
+/* this is div1 which is the main container for the text and the little red box*/
+/*
+.div1-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(158, 63, 63);
+    white-space: nowrap;
+}
+/* this is div1 content which is the little red box below the text*/
+
+/* Parent Grid Layout */
+/*dont use the above css but try to learn from it*/
+/* Parent grid v2 
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(23, 1fr);
+    gap: 5px;}*/
+
+    /* at some point adjust the parent css so that the space between the used space is smaller*/
+    
+    /* in this parent grid v3 the agent recommended switching from 
+     grid-template-rows: repeat(23, 1fr); to  grid-template-rows: repeat(23, auto);
+     the fix did work well
+     however for future work figuring out how to optimize the auto for something else or adjusting the 
+     gap on a space by space basis may be more appropritate as chris*/
+
+    :root {
+        --pinned-header-height: 0px;
+        --primary-color: #515151;
+        --secondary-color: #4F4646;
+        --background-color: #f8f9fa;
+        --text-color: #333;
+        --card-background: #fff;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    /* this is where java is pinning the header/nav bar to*/
+
+    body {
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(23, auto);
+        gap: 5px;
+        }
+
+    /* Main container  added a height percentage clause to mage the over lap but
+    now the gap between the divs is the main issue again*/ 
+    .sticky-header {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .div1 {
+    padding-left: 90px;
+    padding: 15px 76px 15px 90px;
+    /*height: 50%;
+    removed after fixing the row spacing issue might still be needed*/
+    background-color: rgb(79,70,70);
+    color: white;
+    position: relative;
+    }
+    
+    /* Keeps the text and box on one line */
+    .div1 h1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: calc(1.375rem + 1.5vw);
+    line-height: 1.2;
+    }
+
+    @media (min-width: 1200px) {
+    .div1 h1 {
+        font-size: 2.5rem;
+    }
+    }
+    
+    /* Red square box */
+.div1-content{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(158,63,63);
+    display: inline-block;
+    }
+
+/*.div1 span{
+    transform: scaleY(0.8);
+    transform-origin: center;
+}*/ 
+
+.div2 {
+    padding-left: 00px;
+    /*background-color: rgb(79, 70, 70);*/
+    color: white;
+    white-space: nowrap;
+    max-height: 260px;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0);
+    transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.28s ease;
+}
+
+.sticky-header.nav-collapsed .div2 {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+}
+
+    .nav-collapse-toggle {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-collapse-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    font-size: 1.35rem;
+    line-height: 1;
+    transform: rotate(180deg);
+    transition: transform 0.24s ease;
+}
+
+.sticky-header.nav-collapsed .nav-collapse-icon {
+    transform: rotate(0deg);
+}
+
+.div2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+  }
+
+.div2 ul li {
+    float: left;
+  }
+
+  .div2 ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px 15px 90px;
+    text-decoration: none;
+  }
+
+.div2 ul li a:hover {
+    background-color: #111111;
+  }
+
+/* .div2/.div19 are the same divs but with different grid positions for ease of use*/
+
+.div2a {
+    grid-column: span 7 / span 7;
+    grid-row-start: 3;
+    min-height: 50px;
+}
+
+.div3 {
+    grid-column: span 2 / span 5;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+.div3 img {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.div3a {
+    grid-column: span 7 / span 7;
+    grid-row-start: 4;
+    min-height: 10px;
+}
+
+.div4{
+    grid-column: span 2 / span 5;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 7;
+}
+/* why does adding the .div4 add a wierd padding to the right*/
+
+/*.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+.div3 img {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 4;
+}*/
+
+
+.div20 {
+    grid-column: 2 / span 5;
+    grid-row: 11 / span 4;
+    min-height: 150px;
+}
+
+/*---------------Carousel Container---------------*/
+
+.ps-container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ps-card-container {
+    position: relative;
+    flex: 1;
+    min-height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    background-color: var(--card-background);
+}
+
+.ps-card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+}
+
+.ps-card-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.ps-card-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.ps-card:hover .ps-card-image {
+    transform: scale(1.05);
+}
+
+.ps-card-info {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ps-card-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.ps-card-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.ps-card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ps-card-count,
+.ps-card-date {
+    font-size: 14px;
+    color: #888;
+}
+
+.ps-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ps-card-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 15px;
+}
+
+.ps-card-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.ps-card-link {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ps-card-link:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.ps-card-progress {
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ps-card-progress.pending {
+    background-color: #ffeaa7;
+    color: #fdcb6e;
+}
+
+.ps-card-progress.completed {
+    background-color: #55efc4;
+    color: #00b894;
+}
+
+.ps-card-progress.on-hold {
+    background-color: #fab1a0;
+    color: #e17055;
+}
+
+.ps-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.ps-prev-btn,
+.ps-next-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ps-prev-btn:hover,
+.ps-next-btn:hover {
+    background-color: #27ae60;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .ps-card-container {
+        min-height: 500px;
+    }
+
+    .ps-card-title {
+        font-size: 28px;
+    }
+
+    .ps-card-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .div20 {
+        min-height: auto;
+    }
+
+    .ps-container {
+        min-height: auto;
+    }
+
+    .ps-card-container {
+        min-height: auto;
+    }
+
+    .ps-card {
+        position: relative;
+        min-height: 100%;
+        flex-direction: column;
+    }
+
+    .ps-card-content {
+        flex-direction: column;
+    }
+
+    .ps-card-image {
+        height: 250px;
+        width: 100%;
+    }
+
+    .ps-card-info {
+        padding: 30px;
+    }
+
+    .ps-card-title {
+        font-size: 24px;
+    }
+
+    .ps-card-description {
+        font-size: 14px;
+    }
+
+    .ps-card-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ps-card-links {
+        flex-wrap: wrap;
+    }
+
+    .ps-controls {
+        flex-direction: column;
+    }
+}
+
+/*---------------Carousel Container End---------------*/
+
+/*.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 7;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 7;
+    background-color: rgb(158, 63, 63);
+}
+
+.div6 img{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    
+}*/
+ /*in theory the justify content center should be fixing the image but isn't look into*/
+
+.div5 {
+    grid-column: span 7 / span 7;
+    grid-row-start: 9;
+    min-height: 80px;
+    /* use the min-height: code to adjust the sizing in buffer zones without compromising the flex box */
+}
+
+.div8 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 11;
+}
+
+.div8 img{
+    width: 100%;
+    height: auto;
+}
+
+.div9 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 11;
+}
+
+.div10 {
+    grid-column-start: 6;
+    grid-row-start: 12;
+    min-height: 90px;
+}
+
+.div11 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 14;
+}
+
+.div11 img{
+    width: 100%;
+    height: auto;
+}
+
+.div12 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 14;
+}
+
+.div13 {
+    grid-column-start: 2;
+    grid-row-start: 15;
+    min-height: 90px;
+}
+
+.div14 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 17;
+}
+
+.div14 img{
+    width: 100%;
+    height: auto;
+}
+
+.div15 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 17;
+}
+
+.div16 {
+    grid-column-start: 6;
+    grid-row-start: 18;
+}
+
+.div17 {
+    grid-column: span 7 / span 7;
+    grid-row-start: 19;
+    min-height: 100px;
+}
+
+.site-footer {
+    grid-column: 1 / -1;
+    grid-row-start: 21;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 90px;
+    background-color: #333333;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: flex-start;
+    max-width: 820px;
+}
+
+.site-footer a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-top-link {
+    margin-left: auto;
+    white-space: nowrap;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .div1,
+    .div2 ul li a,
+    .site-footer {
+        padding-left: 20px;
+    }
+
+    .div2 ul li {
+        float: none;
+    }
+
+    .site-footer {
+        padding-right: 20px;
+        flex-direction: column;
+    }
+
+    .footer-top-link {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+    /*height: 50%;
+    removed after fixing the row spacing issue might still be needed
+    background-color: rgb(79,70,70);
+    color: white;
+}
+
+/*grid-column: span 7;
+    padding-left: 90px;
+    padding: 15px 20px 15px 90px;
+    background-color: rgb(79,70,70);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+*/
